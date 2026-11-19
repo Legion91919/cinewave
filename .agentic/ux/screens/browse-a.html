@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinewave browse: variant A (rows, lean-back)</title>
+<style>
+:root{--color-bg:#120e17;--color-surface:#1d1724;--color-surface-2:#2a2233;--color-border:#3a3045;--color-text:#f7efe4;--color-muted:#b8acc4;--color-accent:#f2a93b;--color-on-accent:#1a1108;--color-focus:#ffd27a;--color-scrim:rgba(18,14,23,.86);
+--font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',sans-serif;--font-display:Georgia,'Times New Roman',serif;--fs-xs:12px;--fs-sm:14px;--fs-md:16px;--fs-lg:20px;--fs-xl:28px;--fs-xxl:44px;
+--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:40px;--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-pill:999px;--poster-w:168px;--poster-h:252px;--still-w:280px;--still-h:158px}
+*{box-sizing:border-box}body{margin:0;background:var(--color-bg);color:var(--color-text);font:var(--fs-md)/1.5 var(--font-family)}
+a,button{font:inherit;color:inherit}:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+header{display:flex;align-items:center;gap:var(--space-lg);padding:var(--space-md) var(--space-xl);position:absolute;inset:0 0 auto;z-index:2}
+.logo{display:flex;align-items:center;gap:var(--space-sm);font-family:var(--font-display);font-size:var(--fs-lg);font-weight:700;letter-spacing:.02em}
+nav{display:flex;gap:var(--space-md);font-size:var(--fs-sm);color:var(--color-muted)}nav a{text-decoration:none;padding:var(--space-sm)}nav a[aria-current]{color:var(--color-text);border-bottom:2px solid var(--color-accent)}
+.who{margin-left:auto;display:flex;align-items:center;gap:var(--space-sm);font-size:var(--fs-sm);color:var(--color-muted)}.avatar{width:36px;height:36px;border-radius:50%;background:#6b3a5c;display:grid;place-items:center;color:var(--color-text);font-weight:700}
+.hero{min-height:520px;padding:140px var(--space-xl) var(--space-xl);background:linear-gradient(90deg,var(--color-bg) 25%,transparent 70%),linear-gradient(0deg,var(--color-bg),transparent 40%),repeating-linear-gradient(115deg,#7a2e1f 0 40px,#a5532a 40px 80px,#8a6a1f 80px 120px);display:flex;flex-direction:column;justify-content:flex-end;gap:var(--space-md)}
+.eyebrow{font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-accent);font-weight:700}
+.hero h1{font-family:var(--font-display);font-size:var(--fs-xxl);line-height:1.1;margin:0;max-width:16ch}
+.meta{color:var(--color-muted);font-size:var(--fs-sm)}.hero p{max-width:52ch;margin:0}
+.actions{display:flex;gap:var(--space-sm)}.btn{min-height:44px;padding:0 var(--space-lg);border-radius:var(--radius-pill);border:1px solid var(--color-border);background:var(--color-surface-2);cursor:pointer;font-weight:600}.btn.primary{background:var(--color-accent);color:var(--color-on-accent);border-color:transparent}
+section.row{padding:var(--space-md) 0 var(--space-md) var(--space-xl)}section.row h2{font-size:var(--fs-lg);margin:0 0 var(--space-sm)}
+.strip{display:flex;gap:var(--space-md);overflow-x:auto;padding:var(--space-sm) var(--space-xl) var(--space-md) 0;scroll-snap-type:x mandatory;list-style:none;margin:0}
+.strip li{scroll-snap-align:start;flex:none}
+.poster{width:var(--poster-w);height:var(--poster-h);border-radius:var(--radius-md);display:flex;align-items:flex-end;padding:var(--space-sm);font-family:var(--font-display);font-weight:700;font-size:var(--fs-md);line-height:1.15;text-decoration:none;box-shadow:inset 0 -90px 60px -30px rgba(0,0,0,.7)}
+.cap{font-size:var(--fs-xs);color:var(--color-muted);margin-top:var(--space-xs)}
+.still{width:var(--still-w);height:var(--still-h);border-radius:var(--radius-md);position:relative;display:block;text-decoration:none;overflow:hidden}
+.still .t{position:absolute;left:var(--space-sm);bottom:18px;font-weight:700}.still .bar{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(0,0,0,.5)}.still .bar i{display:block;height:100%;background:var(--color-accent)}
+.still .play{position:absolute;inset:0;display:grid;place-items:center;font-size:32px;opacity:.9}
+@media (max-width:600px){header{padding:var(--space-md)}nav{display:none}.hero{padding:110px var(--space-md) var(--space-lg);min-height:440px}.hero h1{font-size:var(--fs-xl)}section.row{padding-left:var(--space-md)}:root{--poster-w:118px;--poster-h:177px;--still-w:220px;--still-h:124px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#f2a93b"/><path d="M5 13c3-4 6-4 9 0s6 4 9 0" stroke="#120e17" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M7 19c2.3-2.5 4.7-2.5 7 0s4.7 2.5 7 0" stroke="#120e17" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Cinewave</div>
+  <nav aria-label="Main"><a href="#" aria-current="page">Home</a><a href="#">Films</a><a href="#">Documentaries</a><a href="#">My list</a></nav>
+  <div class="who"><span>Lagos · NG</span><span class="avatar" aria-label="Profile: Adaeze">A</span></div>
+</header>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="eyebrow">New this week · Licensed in Nigeria</span>
+    <h1 id="hero-title">The Salt Road</h1>
+    <span class="meta">2024 · Mali · 1h 52m · Drama</span>
+    <p>A caravan guide and a runaway archivist cross the desert with forty camels and one stolen reel of film.</p>
+    <div class="actions"><button class="btn primary">▶ Play</button><button class="btn">More info</button></div>
+  </section>
+  <section class="row" aria-labelledby="cw"><h2 id="cw">Continue watching</h2><ul class="strip" id="cw-list"></ul></section>
+  <section class="row" aria-labelledby="r1"><h2 id="r1">Festival favourites</h2><ul class="strip" data-row="0"></ul></section>
+  <section class="row" aria-labelledby="r2"><h2 id="r2">Comedies from Lagos to Lusaka</h2><ul class="strip" data-row="1"></ul></section>
+  <section class="row" aria-labelledby="r3"><h2 id="r3">Documentaries</h2><ul class="strip" data-row="2"></ul></section>
+</main>
+<script>
+const P=['#7a2e1f','#a5532a','#3f5b3a','#2c4a6b','#6b3a5c','#8a6a1f','#1f5a5a','#5a2f2f'];
+const rows=[[['Harmattan Letters',2023,'SN'],['Red Earth Choir',2022,'ZA'],['Baobab Hours',2021,'TZ'],['Twelve Bridges of Kinshasa',2024,'CD'],['Hyena Moon',2020,'ET'],['Dune Radio',2023,'NE']],
+[['Lagos After Rain',2024,'NG'],['Kente & Code',2023,'GH'],['Nightbus to Bulawayo',2022,'ZW'],['Mama Ndege',2021,'KE'],['Gold Coast Static',2024,'GH']],
+[['Sixteen Kilometres',2022,'KE'],['The Last Ferry to Ilha',2023,'MZ'],['Tamarind Summer',2021,'SN'],['Weavers of Kano',2024,'NG']]];
+const art=(i)=>`background:linear-gradient(160deg,${P[i%8]},${P[(i+3)%8]})`;
+document.querySelectorAll('[data-row]').forEach(ul=>{rows[+ul.dataset.row].forEach((t,i)=>{ul.insertAdjacentHTML('beforeend',`<li><a href="#" class="poster" style="${art(i+ +ul.dataset.row*2)}" aria-label="${t[0]}, ${t[1]}">${t[0]}</a><div class="cap">${t[1]} · ${t[2]}</div></li>`)})});
+[['Nightbus to Bulawayo',750,5880],['Harmattan Letters',3100,6240],['Sixteen Kilometres',600,4980]].forEach((c,i)=>{const pct=Math.round(c[1]/c[2]*100),left=Math.round((c[2]-c[1])/60);
+document.getElementById('cw-list').insertAdjacentHTML('beforeend',`<li><a href="#" class="still" style="${art(i*3+1)}" aria-label="Resume ${c[0]}, ${left} minutes left"><span class="play" aria-hidden="true">▶</span><span class="t">${c[0]}</span><span class="bar"><i style="width:${pct}%"></i></span></a><div class="cap">${left} min left</div></li>`)});
+</script>
+</body>
+</html>

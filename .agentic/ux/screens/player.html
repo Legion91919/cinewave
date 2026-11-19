@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinewave player: final (secondary screen)</title>
+<style>
+:root{--color-bg:#120e17;--color-surface:#1d1724;--color-surface-2:#2a2233;--color-border:#3a3045;--color-text:#f7efe4;--color-muted:#b8acc4;--color-accent:#f2a93b;--color-on-accent:#1a1108;--color-danger:#ff8a7a;--color-focus:#ffd27a;--color-scrim:rgba(18,14,23,.86);
+--font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',sans-serif;--font-display:Georgia,'Times New Roman',serif;--fs-xs:12px;--fs-sm:14px;--fs-md:16px;--fs-lg:20px;--fs-xl:28px;
+--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:40px;--radius-md:10px;--radius-lg:16px;--radius-pill:999px}
+*{box-sizing:border-box}body{margin:0;background:#000;color:var(--color-text);font:var(--fs-md)/1.5 var(--font-family);min-height:100vh}
+button,a{font:inherit;color:inherit}:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.stage{position:relative;height:100vh;display:grid;place-items:center;background:repeating-linear-gradient(90deg,#7a2e1f 0 12.5%,#a5532a 0 25%,#8a6a1f 0 37.5%,#3f5b3a 0 50%,#1f5a5a 0 62.5%,#2c4a6b 0 75%,#6b3a5c 0 87.5%,#5a2f2f 0 100%)}
+.top{position:absolute;inset:0 0 auto;padding:var(--space-md) var(--space-lg);display:flex;align-items:center;gap:var(--space-md);background:linear-gradient(var(--color-scrim),transparent)}
+.top h1{font-size:var(--fs-lg);margin:0}.meta{color:var(--color-muted);font-size:var(--fs-sm)}
+.btn{min-height:44px;padding:0 var(--space-lg);border-radius:var(--radius-pill);border:1px solid var(--color-border);background:var(--color-surface-2);cursor:pointer;font-weight:600}.btn.primary{background:var(--color-accent);color:var(--color-on-accent);border-color:transparent}.icon{width:44px;padding:0}
+.controls{position:absolute;inset:auto 0 0;padding:var(--space-lg);background:linear-gradient(transparent,var(--color-scrim));display:grid;gap:var(--space-sm)}
+.scrub{height:6px;background:rgba(255,255,255,.25);border-radius:3px;position:relative}.scrub i{position:absolute;inset:0 auto 0 0;width:62.5%;background:var(--color-accent);border-radius:3px}.scrub b{position:absolute;left:62.5%;top:50%;width:16px;height:16px;margin:-8px;background:var(--color-text);border-radius:50%}
+.row{display:flex;align-items:center;gap:var(--space-sm)}.time{font-variant-numeric:tabular-nums;font-size:var(--fs-sm)}.spacer{flex:1}
+.dialog{background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-xl);max-width:440px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.dialog h2{font-family:var(--font-display);font-size:var(--fs-xl);margin:0 0 var(--space-sm)}.dialog .actions{display:flex;gap:var(--space-sm);justify-content:center;margin-top:var(--space-lg);flex-wrap:wrap}
+.dialog.error h2{color:var(--color-danger)}
+.spinner{width:56px;height:56px;border-radius:50%;border:5px solid rgba(255,255,255,.2);border-top-color:var(--color-accent);animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(1turn)}}@media (prefers-reduced-motion:reduce){.spinner{animation:none}}
+.states{position:fixed;right:var(--space-md);top:72px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-sm);display:grid;font-size:var(--fs-sm);z-index:5}
+.states label{display:flex;gap:var(--space-xs);padding:var(--space-xs) var(--space-sm);cursor:pointer}
+[data-state]{display:none}body[data-show=loading] [data-state~=loading],body[data-show=resume] [data-state~=resume],body[data-show=playing] [data-state~=playing],body[data-show=error] [data-state~=error],body[data-show=paywall] [data-state~=paywall]{display:block}
+.overlay{position:absolute;inset:0;display:none;place-items:center;background:var(--color-scrim)}body[data-show=resume] .overlay[data-state~=resume],body[data-show=error] .overlay[data-state~=error],body[data-show=paywall] .overlay[data-state~=paywall],body[data-show=loading] .overlay[data-state~=loading]{display:grid}
+</style>
+</head>
+<body data-show="resume">
+<div class="stage" role="region" aria-label="Video player">
+  <div class="top"><button class="btn icon" aria-label="Back to browse">←</button><div><h1>Nightbus to Bulawayo</h1><span class="meta">2022 · Zimbabwe · Adaptive stream 360p</span></div></div>
+  <div class="controls" data-state="playing"><div class="scrub" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="1200" aria-valuenow="750" aria-valuetext="12 minutes 30 seconds" tabindex="0"><i></i><b></b></div>
+    <div class="row"><button class="btn icon" aria-label="Pause">❚❚</button><button class="btn icon" aria-label="Back 10 seconds">↺</button><button class="btn icon" aria-label="Forward 10 seconds">↻</button><span class="time">12:30 / 20:00</span><span class="spacer"></span><span class="meta">Progress saved on this device · 2s ago</span><button class="btn icon" aria-label="Full screen">⛶</button></div></div>
+  <div class="overlay" data-state="loading" aria-busy="true"><div><div class="spinner" role="progressbar" aria-label="Starting stream"></div></div></div>
+  <div class="overlay" data-state="resume"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="rs-h"><h2 id="rs-h">Resume at 12:30?</h2><p class="meta">You stopped here on your phone yesterday at 21:14.</p><div class="actions"><button class="btn primary" autofocus>▶ Resume at 12:30</button><button class="btn">Start from the beginning</button></div></div></div>
+  <div class="overlay" data-state="error"><div class="dialog error" role="alert"><h2>The stream didn't start</h2><p class="meta">Your connection dropped or the stream couldn't be reached. Your place (12:30) is saved.</p><div class="actions"><button class="btn primary">Try again</button><button class="btn">Back to browse</button></div></div></div>
+  <div class="overlay" data-state="paywall"><div class="dialog" role="alertdialog" aria-labelledby="pw-h"><h2 id="pw-h">Your subscription has ended</h2><p class="meta">Renew to keep watching. Your place in every film is kept. Card details are entered on our payment partner's secure page, never on Cinewave.</p><div class="actions"><a class="btn primary" href="#" style="display:inline-flex;align-items:center;text-decoration:none">Renew subscription</a><button class="btn">Back to browse</button></div></div></div>
+</div>
+<fieldset class="states"><legend class="meta">State</legend>
+<label><input type="radio" name="s" value="loading">Loading</label><label><input type="radio" name="s" value="resume" checked>Resume prompt</label><label><input type="radio" name="s" value="playing">Playing (success)</label><label><input type="radio" name="s" value="error">Stream error</label><label><input type="radio" name="s" value="paywall">402 renew (empty entitlement)</label></fieldset>
+<script>document.querySelectorAll('input[name=s]').forEach(r=>r.addEventListener('change',e=>document.body.dataset.show=e.target.value));</script>
+</body>
+</html>

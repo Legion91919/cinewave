@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{519447BB-FD88-4E70-A38A-3965F8173ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinewave.Api", "src\Cinewave.Api\Cinewave.Api.csproj", "{0E904119-B50B-4A2A-8EAC-423AF3D17CCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{D0A9510F-DBD4-4C0D-955A-B3AA273EBCCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinewave.Catalogue", "src\Modules\Catalogue\Cinewave.Catalogue.csproj", "{CB5BBF2B-6291-4635-B492-72D8548BCD2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinewave.Playback", "src\Modules\Playback\Cinewave.Playback.csproj", "{CC63B43F-AEFE-4649-9180-A65D5FFB9A01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinewave.Profiles", "src\Modules\Profiles\Cinewave.Profiles.csproj", "{6B9BF76B-BAFA-44FE-AD83-D80E66BDC356}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinewave.Subscriptions", "src\Modules\Subscriptions\Cinewave.Subscriptions.csproj", "{6AFDACBA-04E8-4064-B9D4-B5BF2BC53740}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{36006BCF-5D90-4D15-9D0A-8C3D23EA3866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinewave.Tests", "tests\Cinewave.Tests\Cinewave.Tests.csproj", "{616BF057-2671-444A-BF54-10D13F3D331C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E904119-B50B-4A2A-8EAC-423AF3D17CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E904119-B50B-4A2A-8EAC-423AF3D17CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E904119-B50B-4A2A-8EAC-423AF3D17CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E904119-B50B-4A2A-8EAC-423AF3D17CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB5BBF2B-6291-4635-B492-72D8548BCD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB5BBF2B-6291-4635-B492-72D8548BCD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB5BBF2B-6291-4635-B492-72D8548BCD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB5BBF2B-6291-4635-B492-72D8548BCD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC63B43F-AEFE-4649-9180-A65D5FFB9A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC63B43F-AEFE-4649-9180-A65D5FFB9A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC63B43F-AEFE-4649-9180-A65D5FFB9A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC63B43F-AEFE-4649-9180-A65D5FFB9A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B9BF76B-BAFA-44FE-AD83-D80E66BDC356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9BF76B-BAFA-44FE-AD83-D80E66BDC356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9BF76B-BAFA-44FE-AD83-D80E66BDC356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9BF76B-BAFA-44FE-AD83-D80E66BDC356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AFDACBA-04E8-4064-B9D4-B5BF2BC53740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFDACBA-04E8-4064-B9D4-B5BF2BC53740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFDACBA-04E8-4064-B9D4-B5BF2BC53740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFDACBA-04E8-4064-B9D4-B5BF2BC53740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{616BF057-2671-444A-BF54-10D13F3D331C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616BF057-2671-444A-BF54-10D13F3D331C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616BF057-2671-444A-BF54-10D13F3D331C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616BF057-2671-444A-BF54-10D13F3D331C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E904119-B50B-4A2A-8EAC-423AF3D17CCF} = {519447BB-FD88-4E70-A38A-3965F8173ABB}
+		{D0A9510F-DBD4-4C0D-955A-B3AA273EBCCA} = {519447BB-FD88-4E70-A38A-3965F8173ABB}
+		{CB5BBF2B-6291-4635-B492-72D8548BCD2A} = {D0A9510F-DBD4-4C0D-955A-B3AA273EBCCA}
+		{CC63B43F-AEFE-4649-9180-A65D5FFB9A01} = {D0A9510F-DBD4-4C0D-955A-B3AA273EBCCA}
+		{6B9BF76B-BAFA-44FE-AD83-D80E66BDC356} = {D0A9510F-DBD4-4C0D-955A-B3AA273EBCCA}
+		{6AFDACBA-04E8-4064-B9D4-B5BF2BC53740} = {D0A9510F-DBD4-4C0D-955A-B3AA273EBCCA}
+		{616BF057-2671-444A-BF54-10D13F3D331C} = {36006BCF-5D90-4D15-9D0A-8C3D23EA3866}
+	EndGlobalSection
+EndGlobal

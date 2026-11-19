@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinewave browse: variant C (guided: resume first, then pick a mood)</title>
+<style>
+:root{--color-bg:#120e17;--color-surface:#1d1724;--color-surface-2:#2a2233;--color-border:#3a3045;--color-text:#f7efe4;--color-muted:#b8acc4;--color-accent:#f2a93b;--color-on-accent:#1a1108;--color-focus:#ffd27a;
+--font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',sans-serif;--font-display:Georgia,'Times New Roman',serif;--fs-xs:12px;--fs-sm:14px;--fs-md:16px;--fs-lg:20px;--fs-xl:28px;--fs-xxl:44px;
+--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:40px;--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-pill:999px}
+*{box-sizing:border-box}body{margin:0;background:var(--color-bg);color:var(--color-text);font:var(--fs-md)/1.5 var(--font-family)}
+a,button{font:inherit;color:inherit}:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+main{max-width:880px;margin:0 auto;padding:var(--space-xl) var(--space-lg)}
+.greet{font-family:var(--font-display);font-size:var(--fs-xl);margin:0}.sub{color:var(--color-muted);margin:var(--space-xs) 0 var(--space-xl)}
+.step{display:flex;align-items:center;gap:var(--space-sm);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-muted);margin-bottom:var(--space-sm)}.step b{width:24px;height:24px;border-radius:50%;background:var(--color-accent);color:var(--color-on-accent);display:grid;place-items:center;letter-spacing:0}
+.resume{display:grid;grid-template-columns:240px 1fr;gap:var(--space-lg);background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-lg);align-items:center}
+.resume .art{height:150px;border-radius:var(--radius-md);background:linear-gradient(160deg,#5a2f2f,#a5532a)}
+.resume h2{margin:0;font-family:var(--font-display);font-size:var(--fs-xl)}.meta{color:var(--color-muted);font-size:var(--fs-sm)}
+.bar{height:6px;background:var(--color-surface-2);border-radius:3px;margin:var(--space-sm) 0 var(--space-md)}.bar i{display:block;height:100%;width:13%;background:var(--color-accent);border-radius:3px}
+.btn{min-height:48px;padding:0 var(--space-lg);border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-surface-2);cursor:pointer;font-weight:600}.btn.primary{background:var(--color-accent);color:var(--color-on-accent);border:0}
+.queue{list-style:none;padding:0;margin:var(--space-md) 0 0;display:flex;gap:var(--space-sm);flex-wrap:wrap}.queue li a{display:inline-flex;align-items:center;min-height:44px;padding:0 var(--space-md);background:var(--color-surface);border-radius:var(--radius-pill);text-decoration:none;font-size:var(--fs-sm)}
+.moods{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-sm);margin-top:var(--space-xl)}
+.mood{min-height:88px;border-radius:var(--radius-md);border:2px solid var(--color-border);background:var(--color-surface);cursor:pointer;text-align:left;padding:var(--space-md)}.mood[aria-pressed=true]{border-color:var(--color-accent)}.mood span{display:block;font-size:var(--fs-xs);color:var(--color-muted)}
+.picks{list-style:none;margin:var(--space-lg) 0 0;padding:0;display:grid;gap:var(--space-sm)}
+.picks a{display:grid;grid-template-columns:56px 1fr auto;gap:var(--space-md);align-items:center;background:var(--color-surface);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);text-decoration:none;min-height:72px}
+.picks .sw{width:56px;height:56px;border-radius:var(--radius-sm)}
+.why{font-size:var(--fs-sm);color:var(--color-muted)}
+footer{margin-top:var(--space-xl);color:var(--color-muted);font-size:var(--fs-sm)}
+@media (max-width:640px){.resume{grid-template-columns:1fr}.moods{grid-template-columns:repeat(2,1fr)}main{padding:var(--space-lg) var(--space-md)}}
+</style>
+</head>
+<body>
+<main>
+  <h1 class="greet">Good evening, Thandi</h1>
+  <p class="sub">43 films available in South Africa tonight.</p>
+  <div class="step"><b>1</b> Pick up where you left off</div>
+  <article class="resume" aria-labelledby="r-title">
+    <div class="art" role="img" aria-label="Poster art for Nightbus to Bulawayo"></div>
+    <div><h2 id="r-title">Nightbus to Bulawayo</h2><p class="meta">Stopped at 12:30 on your phone · 1h 25m left</p><div class="bar" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100" aria-label="Watched"><i></i></div>
+    <button class="btn primary">▶ Resume at 12:30</button> <button class="btn">Start over</button></div>
+  </article>
+  <ul class="queue" aria-label="Also in progress"><li><a href="#">Red Earth Choir · 40 min left</a></li><li><a href="#">Kente &amp; Code · 12 min left</a></li></ul>
+  <div class="step" style="margin-top:var(--space-xl)"><b>2</b> Or choose a mood</div>
+  <div class="moods" role="group" aria-label="Mood">
+    <button class="mood" aria-pressed="true">Make me laugh<span>12 comedies</span></button><button class="mood" aria-pressed="false">Edge of my seat<span>8 thrillers</span></button><button class="mood" aria-pressed="false">Something true<span>14 documentaries</span></button><button class="mood" aria-pressed="false">Festival winners<span>9 films</span></button>
+  </div>
+  <ul class="picks" aria-label="Picks for Make me laugh">
+    <li><a href="#"><span class="sw" style="background:linear-gradient(160deg,#8a6a1f,#3f5b3a)"></span><span><strong>Lagos After Rain</strong><br><span class="why">2024 · Nigeria · 1h 41m · A wedding planner's worst weekend</span></span><span aria-hidden="true">▶</span></a></li>
+    <li><a href="#"><span class="sw" style="background:linear-gradient(160deg,#2c4a6b,#7a2e1f)"></span><span><strong>Kente &amp; Code</strong><br><span class="why">2023 · Ghana · 1h 29m · Two weavers launch an app</span></span><span aria-hidden="true">▶</span></a></li>
+    <li><a href="#"><span class="sw" style="background:linear-gradient(160deg,#6b3a5c,#a5532a)"></span><span><strong>Gold Coast Static</strong><br><span class="why">2024 · Ghana · 1h 35m · A late-night radio phone-in goes wrong</span></span><span aria-hidden="true">▶</span></a></li>
+  </ul>
+  <footer>Want the full catalogue? <a href="#">Browse all 43 films</a></footer>
+</main>
+</body>
+</html>

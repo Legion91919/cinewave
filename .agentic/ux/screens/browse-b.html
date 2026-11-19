@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinewave browse: variant B (editorial, card-first)</title>
+<style>
+:root{--color-bg:#120e17;--color-surface:#1d1724;--color-surface-2:#2a2233;--color-border:#3a3045;--color-text:#f7efe4;--color-muted:#b8acc4;--color-accent:#f2a93b;--color-on-accent:#1a1108;--color-focus:#ffd27a;
+--font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',sans-serif;--font-display:Georgia,'Times New Roman',serif;--fs-xs:12px;--fs-sm:14px;--fs-md:16px;--fs-lg:20px;--fs-xl:28px;--fs-xxl:44px;
+--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:40px;--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-pill:999px}
+*{box-sizing:border-box}body{margin:0;background:var(--color-bg);color:var(--color-text);font:var(--fs-md)/1.5 var(--font-family)}
+a,button{font:inherit;color:inherit}:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:var(--space-lg)}
+header{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--color-border);padding-bottom:var(--space-md)}
+.mast{font-family:var(--font-display);font-size:var(--fs-xl);font-weight:700}.mast small{display:block;font:var(--fs-xs)/1.4 var(--font-family);letter-spacing:.14em;text-transform:uppercase;color:var(--color-muted)}
+.issue{font-size:var(--fs-sm);color:var(--color-muted)}
+.layout{display:grid;grid-template-columns:2fr 1fr;gap:var(--space-lg);margin-top:var(--space-lg)}
+.feature{border-radius:var(--radius-lg);overflow:hidden;background:var(--color-surface)}
+.feature .art{height:300px;background:radial-gradient(circle at 70% 30%,#8a6a1f,transparent 50%),linear-gradient(135deg,#2c4a6b,#6b3a5c)}
+.feature .body{padding:var(--space-lg)}.feature h1{font-family:var(--font-display);font-size:var(--fs-xxl);line-height:1.1;margin:0 0 var(--space-sm)}
+.kicker{font-size:var(--fs-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent);font-weight:700}
+.meta{color:var(--color-muted);font-size:var(--fs-sm)}
+.btn{min-height:44px;padding:0 var(--space-lg);border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-surface-2);cursor:pointer;font-weight:600}.btn.primary{background:var(--color-accent);color:var(--color-on-accent);border:0}
+aside{background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-lg)}
+aside h2,.sec h2{font-size:var(--fs-lg);margin:0 0 var(--space-md)}
+.cw{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-md)}
+.cw a{display:grid;grid-template-columns:64px 1fr;gap:var(--space-md);text-decoration:none;align-items:center;min-height:44px}
+.thumb{width:64px;height:64px;border-radius:var(--radius-sm)}.cw strong{display:block}.cw .bar{height:4px;background:var(--color-surface-2);border-radius:2px;margin-top:var(--space-xs)}.cw .bar i{display:block;height:100%;background:var(--color-accent);border-radius:2px}
+.chips{display:flex;gap:var(--space-sm);flex-wrap:wrap;margin:var(--space-xl) 0 var(--space-md)}
+.chip{min-height:44px;padding:0 var(--space-md);border-radius:var(--radius-pill);border:1px solid var(--color-border);background:transparent;cursor:pointer}.chip[aria-pressed=true]{background:var(--color-text);color:var(--color-bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-lg);list-style:none;margin:0;padding:0}
+.card{background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;text-decoration:none;display:block;height:100%}.card .art{aspect-ratio:3/2}.card .b{padding:var(--space-md)}.card h3{margin:0;font-size:var(--fs-md)}.card p{margin:var(--space-xs) 0 0;font-size:var(--fs-sm);color:var(--color-muted)}
+@media (max-width:800px){.layout{grid-template-columns:1fr}.feature h1{font-size:var(--fs-xl)}.feature .art{height:200px}.wrap{padding:var(--space-md)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="mast">Cinewave<small>Cinema from the continent</small></div><div class="issue">Showing films licensed in <strong>Kenya</strong> · Wanjiru</div></header>
+<div class="layout">
+  <article class="feature" aria-labelledby="f-title">
+    <div class="art" role="img" aria-label="Poster art for Twelve Bridges of Kinshasa"></div>
+    <div class="body">
+      <span class="kicker">Editor's pick · This week</span>
+      <h1 id="f-title">Twelve Bridges of Kinshasa</h1>
+      <p class="meta">2024 · DR Congo · 1h 38m · Drama, Music</p>
+      <p>A rumba bandleader has one night to cross the city and reunite the band that split twenty years ago. Our critic: "Joyous, loud and tender."</p>
+      <button class="btn primary">▶ Watch now</button> <button class="btn">+ My list</button>
+    </div>
+  </article>
+  <aside aria-labelledby="cw-h"><h2 id="cw-h">Continue watching</h2><ul class="cw" id="cw"></ul></aside>
+</div>
+<section class="sec"><div class="chips" role="group" aria-label="Filter by collection">
+<button class="chip" aria-pressed="true">All</button><button class="chip" aria-pressed="false">Festival favourites</button><button class="chip" aria-pressed="false">Comedies</button><button class="chip" aria-pressed="false">Documentaries</button><button class="chip" aria-pressed="false">Short films</button></div>
+<h2>Festival favourites</h2><ul class="grid" id="grid"></ul></section>
+</div>
+<script>
+const P=['#7a2e1f','#a5532a','#3f5b3a','#2c4a6b','#6b3a5c','#8a6a1f','#1f5a5a','#5a2f2f'];const art=i=>`background:linear-gradient(160deg,${P[i%8]},${P[(i+3)%8]})`;
+[['Mama Ndege','42 of 96 min',44],['Dune Radio','1h 10m of 1h 41m',69],['Hyena Moon','5 of 102 min',5]].forEach((c,i)=>document.getElementById('cw').insertAdjacentHTML('beforeend',`<li><a href="#"><span class="thumb" style="${art(i*2)}"></span><span><strong>${c[0]}</strong><span class="meta">${c[1]}</span><span class="bar"><i style="width:${c[2]}%"></i></span></span></a></li>`));
+[['Harmattan Letters','2023 · Senegal','Letters from a lighthouse keeper, read aloud on pirate radio.'],['Red Earth Choir','2022 · South Africa','A township choir enters the national finals with no conductor.'],['Baobab Hours','2021 · Tanzania','A village clock stops; nobody wants it fixed.'],['Hyena Moon','2020 · Ethiopia','A night-shift taxi driver and the city that never sleeps.'],['Dune Radio','2023 · Niger','A teenager runs a radio station from a solar panel and a tent.'],['Sixteen Kilometres','2022 · Kenya','The walk to school, filmed over one year.']].forEach((t,i)=>document.getElementById('grid').insertAdjacentHTML('beforeend',`<li><a class="card" href="#"><div class="art" style="${art(i+1)}"></div><div class="b"><h3>${t[0]}</h3><p>${t[1]}</p><p>${t[2]}</p></div></a></li>`));
+</script>
+</body>
+</html>

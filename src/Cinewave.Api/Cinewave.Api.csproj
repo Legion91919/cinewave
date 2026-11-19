@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <RootNamespace>Cinewave.Api</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\Catalogue\Cinewave.Catalogue.csproj" />
+    <ProjectReference Include="..\Modules\Playback\Cinewave.Playback.csproj" />
+    <ProjectReference Include="..\Modules\Subscriptions\Cinewave.Subscriptions.csproj" />
+    <ProjectReference Include="..\Modules\Profiles\Cinewave.Profiles.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Local stand-in for the CDN origin: HLS files copied next to the binary and served as static files under /cdn. -->
+    <Content Include="..\..\cdn-origin\**\*" LinkBase="cdn-origin" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Cinewave.Tests" />
+  </ItemGroup>
+</Project>
