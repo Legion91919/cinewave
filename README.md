@@ -13,6 +13,19 @@ flowchart LR
   cdn --- blob[(HLS renditions)]
 ```
 
+
+## Run it in GitHub Codespaces
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Legion91919/cinewave?quickstart=1)
+
+The dev container installs the SDKs, restores packages and runs every test once on first start. The same setup works locally with VS Code's Dev Containers extension.
+
+| What | Command | Port |
+|---|---|---|
+| API (Cinewave) | `ASPNETCORE_ENVIRONMENT=Development ASPNETCORE_URLS=http://0.0.0.0:5104 dotnet run --project src/Cinewave.Api` | 5104 |
+| Web app | `cd web && npm run dev` | 5173 |
+| All tests (same as CI) | `scripts/test-all.sh` | - |
+
 ## What it is
 Cinewave is an original streaming service for a fictional distributor of African cinema. Every name, film, person and number in it is invented.
 
