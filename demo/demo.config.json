@@ -1,0 +1,25 @@
+{
+  "start": [
+    {
+      "name": "api",
+      "cmd": "dotnet run --project src/Cinewave.Api --no-build",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5104"
+      },
+      "ready": "http://localhost:5104/health/ready"
+    },
+    {
+      "name": "web",
+      "cmd": "npm run dev -- --port 6104 --strictPort",
+      "cwd": "web",
+      "ready": "http://localhost:6104"
+    }
+  ],
+  "url": "http://localhost:6104",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "gifWidth": 880
+}

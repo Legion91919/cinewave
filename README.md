@@ -1,5 +1,15 @@
 # Cinewave
 
+## See it in action
+
+![Cinewave walkthrough: browsing films licensed in Nigeria, the test-pattern stream playing from the CDN path on a phone, Continue watching on the TV resuming at 12:30, and the 402 renew notice for an expired account](docs/media/demo.gif)
+
+| Streaming from the CDN | Continue watching on the TV | Expired account (402) |
+|---|---|---|
+| ![Player streaming the HLS test pattern with progress saved](docs/media/playing.png) | ![Continue watching row showing Resume at 12:30, stopped on your phone](docs/media/continue-watching.png) | ![Your subscription has ended dialog with a renew link](docs/media/renew.png) |
+
+Full-quality video: [docs/media/demo.mp4](docs/media/demo.mp4). Recorded from the running app with `demo/` (`cd demo && npm install && npm run record`).
+
 ## Design at a glance
 **Brief.** Sahel Pictures (fictional) owns 600 African films that only reach cinemas and festivals. Cinewave is its subscription streaming service: viewers browse what is licensed in their country, press play, and pick up where they stopped on any device.
 
